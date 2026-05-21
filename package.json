@@ -40,7 +40,7 @@
     "@stdlib/assert-is-integer-array": "^0.2.3",
     "@stdlib/assert-is-ndarray-like": "^0.2.3",
     "@stdlib/ndarray-base-reverse-dimensions": "github:stdlib-js/ndarray-base-reverse-dimensions#main",
-    "@stdlib/string-format": "^0.2.3",
+    "@stdlib/error-tools-fmtprodmsg": "^0.2.3",
     "@stdlib/types": "^0.4.3",
     "@stdlib/error-tools-fmtprodmsg": "^0.2.3"
   },
