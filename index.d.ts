@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,28 +16,19 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
 
-var isIntegerArray = require( '@stdlib/assert-is-integer-array' ).primitives;
-var isndarrayLike = require( '@stdlib/assert-is-ndarray-like' );
-var base = require( '@stdlib/ndarray-base-reverse-dimensions' );
-var format = require( '@stdlib/error-tools-fmtprodmsg' );
-
-
-// MAIN //
+import { ndarray } from '@stdlib/types/ndarray';
+import { Collection } from '@stdlib/types/array';
 
 /**
 * Returns a read-only view of an input ndarray in which the order of elements along specified dimensions is reversed.
 *
-* @param {ndarray} x - input array
-* @param {IntegerArray} dims - indices of dimensions to reverse
-* @throws {TypeError} first argument must be an ndarray having one or more dimensions
-* @throws {TypeError} second argument must be an array of integers
-* @throws {RangeError} dimension index exceeds the number of dimensions
-* @throws {Error} must provide unique dimension indices
-* @returns {ndarray} ndarray view
+* @param x - input array
+* @param dims - indices of dimensions to reverse
+* @returns output array
 *
 * @example
 * var array = require( '@stdlib/ndarray-array' );
@@ -48,17 +39,9 @@ var format = require( '@stdlib/error-tools-fmtprodmsg' );
 * var y = reverseDimensions( x, [ 0, 1 ] );
 * // returns <ndarray>[ [ 6.0, 5.0 ], [ 4.0, 3.0 ], [ 2.0, 1.0 ] ]
 */
-function reverseDimensions( x, dims ) {
-	if ( !isndarrayLike( x ) ) {
-		throw new TypeError( format( '2nj4f', x ) );
-	}
-	if ( !isIntegerArray( dims ) ) {
-		throw new TypeError( format( '2njGZ', dims ) );
-	}
-	return base( x, dims, false );
-}
+declare function reverseDimensions<T extends ndarray = ndarray>( x: T, dims: Collection<number> ): T;
 
 
 // EXPORTS //
 
-module.exports = reverseDimensions;
+export = reverseDimensions;
